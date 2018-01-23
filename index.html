@@ -11,16 +11,25 @@
     </head>
     <body>
         <main class="container">
-            <form class="note">
+            <form class="note" id="form">
                 <input class="note__title" type="text" name="title" placeholder="Título" autofocus />
-                <textarea class="note__body" name="body" rows="5" placeholder="Criar uma nota..."></textarea>
-                <button class="note__control" type="button" onclick="">
+                <textarea class="note__body" name="text" rows="5" placeholder="Criar uma nota..."></textarea>
+                <button class="note__control" type="button" onclick="adicionarNota(this.form.title, this.form.text, this.form, this.form.nextElementSibling)">
                     Concluído
                 </button>
             </form>
 
             <section class="notes"></section>
         </main>
+
+        <!--<div class="note" id="form">
+                <h1 class="note__title" name="title">Teste </h1>
+                <label class="note__body" name="text">test test te te tes</label>
+                <button lass="note__close" type="button">
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                    </button>
+                
+            </div>-->
 
         <script src="js/scripts.js"></script>
     </body>
