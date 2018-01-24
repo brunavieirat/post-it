@@ -21,6 +21,29 @@
     border: none;
 }
 
+.note-edit{
+font-family: 'Roboto', sans-serif;
+    line-height: 18px;
+    width: 100%;
+    padding: .5rem;
+    margin: 0 0 1rem;
+    border-radius: 2px;
+    background: red;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14);
+
+}
+
+.note-add{
+    font-family: 'Roboto', sans-serif;
+    line-height: 18px;
+    width: 100%;
+    padding: .5rem;
+    margin: 0 0 1rem;
+    border-radius: 2px;
+    background: blue;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14);
+}
+
 
 @media (min-width: 768px) {
     .note {
