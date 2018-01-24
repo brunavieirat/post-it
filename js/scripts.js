@@ -15,9 +15,9 @@ function atualizarSecao(secao){
    
 
     for (var i=0; i < lista.length; i++){
-        alert('teste');
+        
 
-        if (lista[i].edit==true){
+        if (lista[i].edit == false){
 
     template += '<form class="note" id="form" onclick="editarNota(this.parentElement, ' + i +')">' +
                 '<h1 class="note__title" name="title">' + lista[i].titulo + ' </h1>' + 
@@ -28,11 +28,11 @@ function atualizarSecao(secao){
                 '</form>';
 }
    
-else if (lista[i].edit==false){
+else {
     
    
     
-    template += '<form class="note" id="form" onclick="editarNota(this.parentElement, ' + i +')">' +
+    template += '<form class="note" id="form">' +
                 '<input class="note__title" name="title" value="' + lista[i].titulo + '" </input>' +
                 '<textarea class="note__body" name="text">' + lista[i].texto + '</textarea>' +
                 '<button class="note__close" type="button" onclick="removerNota(this.form.parentElement, ' + i + ')">' +
