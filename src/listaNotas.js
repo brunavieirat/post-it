@@ -1,5 +1,4 @@
 import Nota from './nota.js';
-import default from './nota.js';
 
 class ListaNotas{
 
@@ -62,4 +61,4 @@ class ListaNotas{
     
     };
 
-expor default ListaNotas;
+export default ListaNotas;

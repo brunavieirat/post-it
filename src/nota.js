@@ -6,13 +6,5 @@ class Nota{
         this.editando = false;
 
     }
-
-
-    // titulo= inputTitulo.value;
-    // texto= textareaTexto.value;
-
-
-
-
 }
-export default Notas;
+export default Nota;
