@@ -2,7 +2,7 @@ import Nota from './nota.js';
 
 class ListaNotas{
 
-    constructor(observardor) {
+    constructor(observador) {
 
 
         this._lista = [];
@@ -13,12 +13,12 @@ class ListaNotas{
         adiciona (titulo, texto){
            // Cria um elemento Nota (importado do arquivo nota.js)
            // é necessário passar os parametros q sao solicitados na classe do outro arquivo (novoTitulo, novoTexto)
-            let  nota = new Nota(titulo, texto),
+            let  nota = new Nota(titulo, texto);
 
             //pegar o array de lista e adicionar a nota com parametros passados anteriormente
             this._lista.push(nota);
 
-            this._observador();                
+            this._observador();              
                 
             }
         
@@ -26,6 +26,7 @@ class ListaNotas{
         remove(index){
             //remove um valor da lista, iniciando pela posicao recebida
             this.lista.splice(index,1);
+            this._observador();
 
         }
     
@@ -49,7 +50,7 @@ class ListaNotas{
         
         }
 
-        pega(posicao){
+        pega(index){
 
             //pega a posicao do objeto da lista   
             return this.lista[index];

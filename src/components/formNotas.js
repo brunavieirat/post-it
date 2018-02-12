@@ -16,20 +16,23 @@ function FormNotas(props){
 let inputTitulo = new FormInput({
 
     className: 'note__title',
+    type: 'text',
     name: 'title',
-    readonly: !props.notaAtual.editando,
+    placeholder: 'Título',
+    readonly: !props.notaAtual.edit,
     value: props.notaAtual.titulo
 });
-
-
-
 let inputTexto = new FormTextArea({
 
     className: 'note__body',
     name: 'text',
-    readonly: !props.notaAtual.editando,
-    children: props.notaAtual.texto
+    placeholder: 'Criar uma nota...', 
+    rows: 5, 
+    readonly: !props.notaAtual.edit,
+    children: props.notaAtual.texto,
+    
 });
+
 
 
 let children;
@@ -40,20 +43,22 @@ let botaoConcluido = new FormButton({
     className: 'note__control',
     type: 'button',
     children: 'Concluído',
-    click () => {
-        props.adicionarNota()
+    click: () => {
+        props.adicionarNota(inputTitulo, inputTexto, formNotas, props.index)
     
     }
 
 });
+
+
 
 let botaoRemover = new FormButton({
 
     className: 'note__control',
     type: 'button',
     children: '<i class="fa fa-times" aria-hidden="true"></i>',
-    click: () => {
-        props.removerNota()
+    click: event => {
+        props.removerNota(event, index);
     }
 });
 

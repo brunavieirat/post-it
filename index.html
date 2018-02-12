@@ -8,19 +8,20 @@
         <link rel="stylesheet" href="css/font-awesome.min.css">
         <link rel="stylesheet" href="css/styles.css">
         <title>Post-it</title>
+        
     </head>
     <body>
-        <main class="container">
-            <form class="note" id="form" >
+        <article class="container">
+            <form class="note" >
                 <input class="note__title" type="text" name="title" placeholder="Título" autofocus />
                 <textarea class="note__body" name="text" rows="5" placeholder="Criar uma nota..."></textarea>
-                <button class="note__control" type="button" onclick="adicionarNota(this.form.title, this.form.text, this.form, this.form.nextElementSibling)">
+                <button class="note__control" type="button" onclick="adicionarNota(this.form.title, this.form.text, this.form, null)">
                     Concluído
                 </button>
             </form>
 
             <section class="notes"></section>
-        </main>
+        </article>
 
         <!--<div class="note" id="form">
                 <h1 class="note__title" name="title">Teste </h1>
