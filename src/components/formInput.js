@@ -2,7 +2,7 @@ function FormInput (props){
 
     let inputTitulo = document.createElement('input');
 
-    inputTitulo.setAttribute('class', prop.className);
+    inputTitulo.setAttribute('class', props.className);
     inputTitulo.setAttribute('type', props.type)
     inputTitulo.setAttribute('name', props.name);
     inputTitulo.setAttribute('placeholder', props.placeholder);

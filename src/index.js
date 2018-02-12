@@ -28,7 +28,7 @@ window.adicionarNota = (inputTitulo, inputTexto, formulario, index) => {
 
     }
 
-         alert('ok');
+         
     
 };
 

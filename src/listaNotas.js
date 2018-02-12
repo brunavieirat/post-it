@@ -17,6 +17,7 @@ class ListaNotas{
 
             //pegar o array de lista e adicionar a nota com parametros passados anteriormente
             this._lista.push(nota);
+            
 
             this._observador();              
                 
@@ -25,7 +26,7 @@ class ListaNotas{
                
         remove(index){
             //remove um valor da lista, iniciando pela posicao recebida
-            this.lista.splice(index,1);
+            this._lista.splice(index,1);
             this._observador();
 
         }
@@ -33,18 +34,18 @@ class ListaNotas{
         edita(index){
             
             //pega a posição (objeto) e informa q o mesmo esta sendo editado
-            this.lista[index].edit=true;
+            this._lista[index].edit=true;
             this._observador();  
         }
     
         salva(index, titulo, texto){
             //recebe a posição, o titulo e o texto que deverão ser alterados (novos valores)
             //passa os valores digitados para o objeto da lista
-            this.lista[index].titulo = titulo;
-            this.lista[index].texto = texto;
+            this._lista[index].titulo = titulo;
+            this._lista[index].texto = texto;
             
             //apos editar indica que nao esta mais editando e salva
-            this.lista[index].edit = false;
+            this._lista[index].edit = false;
 
             this._observador();
         
@@ -53,7 +54,7 @@ class ListaNotas{
         pega(index){
 
             //pega a posicao do objeto da lista   
-            return this.lista[index];
+            return this._lista[index];
         }
     
         contaTotal(){

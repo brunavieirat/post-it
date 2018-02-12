@@ -72,7 +72,7 @@ function FormInput(props) {
 
     let inputTitulo = document.createElement('input');
 
-    inputTitulo.setAttribute('class', prop.className);
+    inputTitulo.setAttribute('class', props.className);
     inputTitulo.setAttribute('type', props.type);
     inputTitulo.setAttribute('name', props.name);
     inputTitulo.setAttribute('placeholder', props.placeholder);
@@ -182,8 +182,6 @@ window.adicionarNota = (inputTitulo, inputTexto, formulario, index) => {
         listaNotas.adiciona(inputTitulo.value, inputTexto.value);
         formulario.reset();
     }
-
-    alert('ok');
 };
 
 window.atualizarSecao = secao => {
@@ -243,25 +241,25 @@ class ListaNotas {
 
     remove(index) {
         //remove um valor da lista, iniciando pela posicao recebida
-        this.lista.splice(index, 1);
+        this._lista.splice(index, 1);
         this._observador();
     }
 
     edita(index) {
 
         //pega a posição (objeto) e informa q o mesmo esta sendo editado
-        this.lista[index].edit = true;
+        this._lista[index].edit = true;
         this._observador();
     }
 
     salva(index, titulo, texto) {
         //recebe a posição, o titulo e o texto que deverão ser alterados (novos valores)
         //passa os valores digitados para o objeto da lista
-        this.lista[index].titulo = titulo;
-        this.lista[index].texto = texto;
+        this._lista[index].titulo = titulo;
+        this._lista[index].texto = texto;
 
         //apos editar indica que nao esta mais editando e salva
-        this.lista[index].edit = false;
+        this._lista[index].edit = false;
 
         this._observador();
     }
@@ -269,7 +267,7 @@ class ListaNotas {
     pega(index) {
 
         //pega a posicao do objeto da lista   
-        return this.lista[index];
+        return this._lista[index];
     }
 
     contaTotal() {
@@ -346,7 +344,7 @@ function FormNotas(props) {
         type: 'button',
         children: 'Concluído',
         click: () => {
-            props.adicionarNota(inputTitulo, inputTexto, formNotas, props.index);
+            adicionarNota(inputTitulo, inputTexto, formNotas, index);
         }
 
     });
@@ -357,11 +355,11 @@ function FormNotas(props) {
         type: 'button',
         children: '<i class="fa fa-times" aria-hidden="true"></i>',
         click: event => {
-            props.removerNota(event, index);
+            removerNota(event, index);
         }
     });
 
-    children = [botaoRemover, inputTitulo, inputTexto, formNotas, botaoConcluido];
+    children = [botaoRemover, inputTitulo, inputTexto, botaoConcluido];
 
     formNotas = new __WEBPACK_IMPORTED_MODULE_3__form__["a" /* default */]({
 

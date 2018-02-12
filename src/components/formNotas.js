@@ -44,7 +44,7 @@ let botaoConcluido = new FormButton({
     type: 'button',
     children: 'Concluído',
     click: () => {
-        props.adicionarNota(inputTitulo, inputTexto, formNotas, props.index)
+        adicionarNota(inputTitulo, inputTexto, formNotas, index)
     
     }
 
@@ -58,12 +58,12 @@ let botaoRemover = new FormButton({
     type: 'button',
     children: '<i class="fa fa-times" aria-hidden="true"></i>',
     click: event => {
-        props.removerNota(event, index);
+        removerNota(event, index);
     }
 });
 
 
-children = [botaoRemover, inputTitulo, inputTexto, formNotas, botaoConcluido];
+children = [botaoRemover, inputTitulo, inputTexto, botaoConcluido];
 
 formNotas = new Form({
 
